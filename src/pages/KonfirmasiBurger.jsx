@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity, TextInput} from 'react-native';
 import React from 'react';
 
 const style = StyleSheet.create({
@@ -66,8 +66,16 @@ const style = StyleSheet.create({
     backgroundColor: 'gray',
     borderWidth: 1,
     margin: 16,
+  }, internput: {
+    color: 'black',
+    placeholder: "Masukkan Jumlah",
+    backgroundColor: '#BDBDBD',
+    margin: 16,
+    borderRadius: 6,
+  },
+  succesbutton: {
+    backgroundColor: 'red',
   }
-
 });
 
 const Burger = ({navigation}) => {
@@ -78,14 +86,14 @@ const Burger = ({navigation}) => {
           <Image
             source={require('../assets/icon/Frame.png')}
             style={style.arrow}
-          />
-        </View>
+          /> 
+             </View> 
       </TouchableOpacity>
       <View style={style.rowcontainer}>
         <Image
           source={require('../assets/images/Burger.jpg')}
           style={style.displayimage}
-        />
+        /> 
       </View>
       <View style={style.rowcontainer}>
         <Text style={style.textcontainer}>Burger</Text>
@@ -98,7 +106,15 @@ const Burger = ({navigation}) => {
           sit internos quam qui galisum deserunt sed dolor maxime.
         </Text>
       </View>
-    <Text style={style.line}> </Text> 
+      <Text style={style.line}> </Text>
+      
+      <View>
+      <TextInput style={style.internput} />
+      </View>
+
+      <View>
+
+      </View>
     </View>
   );
 };
