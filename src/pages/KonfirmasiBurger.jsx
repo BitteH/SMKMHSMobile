@@ -71,8 +71,9 @@ const style = StyleSheet.create({
     marginTop: 4,
   }, internput: {
     color: 'black',
-    placeholder: "Masukkan Jumlah",
-    backgroundColor: '#BDBDBD',
+    placeholder: "Masukkan Jumlah.",
+    borderColor:'#BDBDBD',
+    borderWidth: 2,
     margin: 16,
     marginTop: 4,
    
@@ -82,18 +83,21 @@ const style = StyleSheet.create({
     backgroundColor: 'red',
   },
 confirmbutton: {
-  width: 200,
+  width: 385,
   height: 50,
   backgroundColor: 'red',
   alignSelf: 'center',
   borderRadius: 25,
+  marginTop: 174,
+  margin: 16
 },
 kembali : {
   marginTop: 20,
         fontFamily: 'Inter',
         fontWeight: 'bold',
         color: 'black',
-        fontSize: 20
+        fontSize: 20,
+       
 },
 jumlahpesanan : {
   color: 'black',
@@ -108,6 +112,8 @@ konfirmasi: {
   alignItems: 'center',
   alignSelf: 'center',
   margin: 16,
+  color: 'white'
+  
 }
 });
 
@@ -151,7 +157,7 @@ const Burger = ({navigation}) => {
       <TextInput style={style.internput} />
       </View>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Succespage')}>
       <View>
       <View style={style.confirmbutton} >
         <Text style={style.konfirmasi}> Konfirmasi </Text>
