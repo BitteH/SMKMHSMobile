@@ -58,37 +58,76 @@ const style = StyleSheet.create({
     fontFamily: 'Inter',
     fontWeight: '100',
     flex: 1,
-    padding: 16,
+    paddingLeft: 16,
+    paddingRight: 16,
   },
   line: {
-    width: 390,
+    width: 400,
     height: 1,
     backgroundColor: 'gray',
     borderWidth: 1,
-    margin: 16,
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginTop: 4,
   }, internput: {
     color: 'black',
     placeholder: "Masukkan Jumlah",
     backgroundColor: '#BDBDBD',
     margin: 16,
+    marginTop: 4,
+   
     borderRadius: 6,
   },
   succesbutton: {
     backgroundColor: 'red',
-  }
+  },
+confirmbutton: {
+  width: 200,
+  height: 50,
+  backgroundColor: 'red',
+  alignSelf: 'center',
+  borderRadius: 25,
+},
+kembali : {
+  marginTop: 20,
+        fontFamily: 'Inter',
+        fontWeight: 'bold',
+        color: 'black',
+        fontSize: 20
+},
+jumlahpesanan : {
+  color: 'black',
+  margin: 8,
+  marginTop: 20,
+  marginLeft: 32,
+  fontFamily: 'Inter',
+  fontSize: 12,
+},
+konfirmasi: {
+  alignContent: 'center',
+  alignItems: 'center',
+  alignSelf: 'center',
+  margin: 16,
+}
 });
 
 const Burger = ({navigation}) => {
   return (
     <View>
+      <View style={style.rowcontainer}>
       <TouchableOpacity onPress={() => navigation.navigate('Home')}>
         <View style={style.ellipse}>
           <Image
             source={require('../assets/icon/Frame.png')}
             style={style.arrow}
           /> 
-             </View> 
+          
+             </View>
       </TouchableOpacity>
+      <Text style={style.kembali}>
+        Kembali
+      </Text>
+      </View>
       <View style={style.rowcontainer}>
         <Image
           source={require('../assets/images/Burger.jpg')}
@@ -107,14 +146,18 @@ const Burger = ({navigation}) => {
         </Text>
       </View>
       <Text style={style.line}> </Text>
-      
+      <Text style={style.jumlahpesanan}> Masukkan jumlah pemesanan</Text>
       <View>
       <TextInput style={style.internput} />
       </View>
 
+      <TouchableOpacity>
       <View>
-
+      <View style={style.confirmbutton} >
+        <Text style={style.konfirmasi}> Konfirmasi </Text>
       </View>
+      </View>
+      </TouchableOpacity>
     </View>
   );
 };
